@@ -1,0 +1,40 @@
+:root {
+	--primary: black;
+	--secondary: white;
+	--highlight: #FF9600;
+	--grey: #A3AAAE;
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: var(--primary, black);
+    color: var(--secondary, white);
+  }
+}
+@media (prefers-color-scheme: light) {
+  body {
+    background-color: var(--secondary, white);
+    color: var(--primary, black);
+  }
+}
+
+#navbar {
+	overflow: hidden;
+	position: fixed;
+	top: 0; 
+	left: 0;
+	width: 100%;
+	color: var(--highlight, #FF9600);
+	align-items: center;
+	padding-top: 10px;
+	display: flex;
+	flex: 0;
+	justify-content: space-around;
+}
+
+.section {
+	height: 100vh; 
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
