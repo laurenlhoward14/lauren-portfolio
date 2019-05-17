@@ -1,8 +1,16 @@
 :root {
 	--primary: white;
 	--secondary: #293d2c;
-	--highlight: #d1a119;
+	--highlight: #311d21;
 	--grey: #A3AAAE;
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--primary: #293d2c;
+		--secondary: white;
+		--highlight: #d1a119;
+	}
 }
 
 body {
@@ -12,8 +20,8 @@ body {
 
 @media (prefers-color-scheme: dark) {
   body {
-    background-color: var(--secondary, #293d2c);
-    color: var(--primary, white);
+    background-color: var(--primary, #293d2c);
+    color: var(--secondary, white);
   }
 }
 
@@ -23,7 +31,7 @@ body {
 	top: 0; 
 	left: 0;
 	width: 100%;
-	color: var(--highlight, #d1a119);
+	color: var(--highlight, #311d21);
 	align-items: center;
 	padding-top: 10px;
 	display: flex;
@@ -36,4 +44,31 @@ body {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	flex-direction: column;
+}
+
+#welcome-section {
+	vertical-align: center;
+}
+
+#action-button-container {
+	position: fixed;
+	bottom: 0px;
+	right: 0px; 
+	left: 0px;
+
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: center; 
+	align-items: center;
+
+	padding: 10px;
+}
+
+#action-button {
+	padding: 10px;
+	display: flex;
+	align-items: center;
+	border-color: var(--highlight, #311d21);
+	background-color: transparent;
 }
