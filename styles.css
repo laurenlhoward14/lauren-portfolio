@@ -1,20 +1,19 @@
 :root {
-	--primary: black;
-	--secondary: white;
-	--highlight: #FF9600;
+	--primary: white;
+	--secondary: #293d2c;
+	--highlight: #d1a119;
 	--grey: #A3AAAE;
+}
+
+body {
+	background-color: var(--primary, white);
+	color: var(--secondary, #293d2c);
 }
 
 @media (prefers-color-scheme: dark) {
   body {
-    background-color: var(--primary, black);
-    color: var(--secondary, white);
-  }
-}
-@media (prefers-color-scheme: light) {
-  body {
-    background-color: var(--secondary, white);
-    color: var(--primary, black);
+    background-color: var(--secondary, #293d2c);
+    color: var(--primary, white);
   }
 }
 
@@ -24,7 +23,7 @@
 	top: 0; 
 	left: 0;
 	width: 100%;
-	color: var(--highlight, #FF9600);
+	color: var(--highlight, #d1a119);
 	align-items: center;
 	padding-top: 10px;
 	display: flex;
