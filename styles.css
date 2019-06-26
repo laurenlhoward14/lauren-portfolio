@@ -16,6 +16,12 @@
 body {
 	background-color: var(--primary, white);
 	color: var(--secondary, #293d2c);
+	overscroll-behavior: none;
+	font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+	font-size: 112.5%;
+	line-height: 1.5;
+	margin: 0;
+  padding: 0;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -25,18 +31,57 @@ body {
   }
 }
 
+#welcome-section--container{
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 38em;
+	width: 88%;
+}
+
+h1 {
+	font-size: 2em;
+	font-weight: 700;
+	line-height: 1.2;
+	margin: 0 0 1em;
+	padding: 1em 0 0;
+	word-wrap: break-word;
+}
+
 #navbar {
 	overflow: hidden;
 	position: fixed;
 	top: 0; 
 	left: 0;
 	width: 100%;
-	color: var(--highlight, #311d21);
 	align-items: center;
-	padding-top: 10px;
+	justify-content: center;
 	display: flex;
 	flex: 0;
+	background-color: var(--secondary, #293d2c);
+}
+
+#navbar div {
+	max-width: 980px;
+	flex: 1;
+}
+
+#navbar div ul {
+	display: flex;
 	justify-content: space-around;
+	align-self: stretch;
+	width: auto;
+	list-style: none;
+	padding: 0;
+}
+
+#navbar div ul li {
+	# inside
+}
+
+
+#navbar div	ul li a {
+	color: var(--primary, white);
+	text-decoration: none;
 }
 
 .section {
@@ -56,12 +101,10 @@ body {
 	bottom: 0px;
 	right: 0px; 
 	left: 0px;
-
 	display: flex;
 	flex-flow: column nowrap;
 	justify-content: center; 
 	align-items: center;
-
 	padding: 10px;
 }
 
@@ -71,4 +114,13 @@ body {
 	align-items: center;
 	border-color: var(--highlight, #311d21);
 	background-color: transparent;
+}
+
+.img-container {
+	justify-content: center;
+	display: flex;
+}
+
+.img-circle {
+	border-radius: 50%;
 }
