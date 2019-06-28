@@ -1,7 +1,7 @@
 :root {
 	--primary: white;
 	--secondary: #293d2c;
-	--highlight: #311d21;
+	--highlight: #d1a119;
 	--grey: #A3AAAE;
 }
 
@@ -9,7 +9,6 @@
 	:root {
 		--primary: #293d2c;
 		--secondary: white;
-		--highlight: #d1a119;
 	}
 }
 
@@ -17,11 +16,17 @@ body {
 	background-color: var(--primary, white);
 	color: var(--secondary, #293d2c);
 	overscroll-behavior: none;
-	font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+	font-family: -apple-system, BlinkMacSystemFont, sans-serif;	
 	font-size: 112.5%;
 	line-height: 1.5;
 	margin: 0;
-  padding: 0;
+	padding: 0;
+}
+
+@media only screen and (max-width: 600px) {
+	body {
+		font-size: 90%;
+	}
 }
 
 @media (prefers-color-scheme: dark) {
@@ -47,6 +52,17 @@ h1 {
 	word-wrap: break-word;
 }
 
+a {
+	color: var(--secondary, white);
+	text-decoration-color: var(--highlight, "#d1a119");
+}
+
+@media only screen and (max-height: 600px) {
+	h1 {
+		margin: 0 0 0.5em;
+		padding: 0.5em 0 0;
+	}
+}
 #navbar {
 	overflow: hidden;
 	position: fixed;
@@ -72,12 +88,22 @@ h1 {
 	width: auto;
 	list-style: none;
 	padding: 0;
+	margin-block-start: 1em;
+	margin-block-end: 1em;
+	margin-inline-start: 0;
+	margin-inline-end: 0;
+	padding-inline-start: 0;
 }
 
-#navbar div ul li {
-	# inside
+@media only screen and (max-width: 600px) {
+	#navbar div ul {
+		margin-block-start: 0.5em;
+		margin-block-end: 0.5em;
+		margin-inline-start: 0;
+		margin-inline-end: 0;
+		padding-inline-start: 0;
+	}
 }
-
 
 #navbar div	ul li a {
 	color: var(--primary, white);
@@ -112,8 +138,10 @@ h1 {
 	padding: 10px;
 	display: flex;
 	align-items: center;
-	border-color: var(--highlight, #311d21);
-	background-color: transparent;
+	color: var(--primary, white);
+	border: 1.5px solid var(--highlight, #d1a119);
+	background-color: var(--secondary, "#293d2c");
+	text-decoration: none;
 }
 
 .img-container {
