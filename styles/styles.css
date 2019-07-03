@@ -1,20 +1,14 @@
 :root {
-	--primary: white;
-	--secondary: #293d2c;
-	--highlight: #d1a119;
-	--grey: #A3AAAE;
-}
-
-@media (prefers-color-scheme: dark) {
-	:root {
-		--primary: #293d2c;
-		--secondary: white;
-	}
+	--primary: #121212;
+	--primary11: #1d1d1d;
+	--primary13: #202020;
+	--secondary: #e1e1e1;
+	--highlight: #02ee97;
 }
 
 body {
-	background-color: var(--primary, white);
-	color: var(--secondary, #293d2c);
+	background-color: var(--primary);
+	color: var(--secondary);
 	overscroll-behavior: none;
 	font-family: -apple-system, BlinkMacSystemFont, sans-serif;	
 	font-size: 112.5%;
@@ -31,8 +25,8 @@ body {
 
 @media (prefers-color-scheme: dark) {
   body {
-    background-color: var(--primary, #293d2c);
-    color: var(--secondary, white);
+    background-color: var(--primary);
+    color: var(--secondary);
   }
 }
 
@@ -53,8 +47,8 @@ h1 {
 }
 
 a {
-	color: var(--secondary, white);
-	text-decoration-color: var(--highlight, "#d1a119");
+	color: var(--secondary);
+	text-decoration-color: var(--highlight);
 }
 
 @media only screen and (max-height: 600px) {
@@ -73,7 +67,7 @@ a {
 	justify-content: center;
 	display: flex;
 	flex: 0;
-	background-color: var(--secondary, #293d2c);
+	background-color: var(--primary11);
 }
 
 #navbar div {
@@ -106,7 +100,7 @@ a {
 }
 
 #navbar div	ul li a {
-	color: var(--primary, white);
+	color: var(--secondary);
 	text-decoration: none;
 }
 
@@ -130,18 +124,20 @@ a {
 	display: flex;
 	flex-flow: column nowrap;
 	justify-content: center; 
-	align-items: center;
+	align-items: flex-end;
 	padding: 10px;
 }
 
 #action-button {
 	padding: 10px;
+	margin: 10px 20px;
 	display: flex;
 	align-items: center;
-	color: var(--primary, white);
-	border: 1.5px solid var(--highlight, #d1a119);
-	background-color: var(--secondary, "#293d2c");
+	color: var(--primary);
+	background-color: var(--highlight);
 	text-decoration: none;
+	border-radius: 5px;
+	cursor: pointer;
 }
 
 .img-container {
@@ -151,4 +147,46 @@ a {
 
 .img-circle {
 	border-radius: 50%;
+}
+
+#projects {
+	display: flex;
+	flex-direction: column;
+	padding-top: 65px;
+	padding-bottom: 85px;
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 38em;
+	width: 88%;
+}
+
+@media only screen and (max-width: 600px) {
+	#projects {
+		padding-top: 36px;
+	}
+}
+.project-tile {
+	flex: 1;
+	background-color: var(--primary13);
+	border-radius: 5px;
+	margin: 10px 10px 10px 10px;
+	padding: 20px 25px 20px 25px;
+	width: 88%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+}
+
+.project-tile h2 {
+	margin: 0 0 0;
+}
+
+.project-tile a {
+	padding: 10px;
+	color: var(--primary);
+	background-color: var(--highlight);
+	text-decoration: none;
+	border-radius: 5px;
+	cursor: pointer;
+	margin: 0 0 0 0;
 }
