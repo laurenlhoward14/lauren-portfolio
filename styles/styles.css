@@ -177,6 +177,27 @@ a {
 	justify-content: space-around;
 }
 
+.project-tile div {
+	display: flex;
+	flex-wrap: wrap;
+
+}
+
+.project-tile div div {
+	padding: 5px 5px 5px 5px;
+}
+
+@media only screen and (max-width: 600px) {
+	.project-tile {
+		margin: 5px 5px 5px 5px;
+		padding: 10px 12.5px 10px 12.5px;	
+	}
+
+	.project-tile p {
+		display: none;
+	}
+}
+
 .project-tile h2 {
 	margin: 0 0 0;
 }
@@ -188,5 +209,6 @@ a {
 	text-decoration: none;
 	border-radius: 5px;
 	cursor: pointer;
-	margin: 0 0 0 0;
+	display: inline-block;
+	flex: 1;
 }
