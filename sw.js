@@ -2,7 +2,7 @@ importScripts('scripts/cache-polyfill.js');
 
 self.addEventListener('install', function(e) {
  e.waitUntil(
-   caches.open('jack-bio-site').then(function(cache) {
+   caches.open('jack-bio-site-material-dark').then(function(cache) {
      return cache.addAll([
 			 './',
 			'styles/styles.css',
