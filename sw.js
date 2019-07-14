@@ -1,16 +1,17 @@
 importScripts('scripts/cache-polyfill.js');
+const LATEST_VERSION = 'cache07142019'
 
 self.addEventListener('install', function(e) {
  e.waitUntil(
-   caches.open('jack-bio-site-material-dark').then(function(cache) {
+   caches.open(LATEST_VERSION).then(function(cache) {
      return cache.addAll([
 			 './',
 			'styles/styles.css',
 			'images/bio-175.png',
-			'favicon.ico',
+      'favicon.ico',
 			'manifest.json',
 			'images/bio-192.png',
-			'images/bio-512.png'
+			'images/outline-chat_bubble_outline-24px.svg'
 			]);
    })
  );
@@ -22,4 +23,19 @@ self.addEventListener('fetch', function(event) {
 			return response || fetch(event.request);
 		})
 	);	
+});
+
+self.addEventListener('activate',function(event){
+  event.waitUntil(
+    caches.keys().then(function(cacheNames){
+      return Promise.all( 
+        cacheNames.filter(function(cacheName) {
+					return cacheName != LATEST_VERSION;
+        }
+        ).map(function(cacheName) {
+          return caches.delete(cacheName);
+        })
+      );
+    })
+  );
 });
