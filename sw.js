@@ -1,5 +1,5 @@
 importScripts('scripts/cache-polyfill.js');
-const LATEST_VERSION = 'cache20190727'
+const LATEST_VERSION = 'cache201907270631'
 const CACHED_URLS = [
   './',
   'styles/styles.css',
@@ -14,8 +14,10 @@ self.addEventListener('install', function(e) {
  e.waitUntil(
    caches.open(LATEST_VERSION).then(function(cache) {
      return cache.addAll(CACHED_URLS);
-   })
- );
+   }).then(function(e){
+    return self.skipWaiting();
+  })
+  )
 });
 
 self.addEventListener('fetch', function(event) {
