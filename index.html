@@ -31,7 +31,11 @@
         <div id="welcome-section--container">
           <article>
             <div class="img-container">
-              <img src="images/bio-175.png" height="175" width="175" class="img-circle" alt="Jack Howard smiling in front of a bar">
+              <picture>
+                <source type="image/webp" srcset="images/bio-175.webp">
+                <source type="image/png" srcset="images/bio-175.png">
+                <img src="images/bio-175.png" height="175" width="175" class="img-circle" alt="Jack Howard smiling in front of a bar">
+              </picture>
             </div>
             <h1>Yo — he's Jack.</h1>
             <p>He makes web and mobile apps and tea. Jack's made mobile apps for delayed photo-sharing, addiction support, public radio donation, and real estate investment. He is currently a software engineer at a transportation startup.</p>
@@ -84,7 +88,6 @@
       if('serviceWorker' in navigator) {
       	navigator.serviceWorker
       					 .register('/sw.js')
-      					 .then(function() { console.log("Service Worker Registered aka Can Go Offline Now"); });
       }
     </script>
   </body>
