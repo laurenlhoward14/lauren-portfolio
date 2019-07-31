@@ -1,9 +1,10 @@
 importScripts('scripts/cache-polyfill.js');
-const LATEST_VERSION = 'cache201907271714'
+const LATEST_VERSION = 'cache20190730'
 const CACHED_URLS = [
   './',
   'styles/styles.css',
   'images/bio-175.png',
+  'images/bio-175.webp',
   'favicon.ico',
   'manifest.json',
   'images/bio-192.png',
