@@ -1,5 +1,5 @@
 importScripts('scripts/cache-polyfill.js');
-const LATEST_VERSION = 'cache201907301'
+const LATEST_VERSION = 'cache20190802'
 const CACHED_URLS = [
   './',
   'styles/styles.css',
@@ -11,27 +11,31 @@ const CACHED_URLS = [
   'images/outline-chat_bubble_outline-24px.svg'
 ]
 
-self.addEventListener('install', function(e) {
- e.waitUntil(
-   caches.open(LATEST_VERSION).then(function(cache) {
-     return cache.addAll(CACHED_URLS);
-   })
+self.addEventListener('install', function (e) {
+  e.waitUntil(
+    caches.open(LATEST_VERSION).then(function (cache) {
+      return cache.addAll(CACHED_URLS);
+    }).then(function (e) {
+      if (navigator.onLine) {
+        return self.skipWaiting();
+      }
+    })
   )
 });
 
-self.addEventListener('fetch', function(event) {
-	event.respondWith(
-		caches.match(event.request).then(function(response) {
-			return response || fetch(event.request);
-		})
-	);	
+self.addEventListener('fetch', function (event) {
+  event.respondWith(
+    caches.match(event.request).then(function (response) {
+      return response || fetch(event.request);
+    })
+  );
 });
 
-self.addEventListener('activate', function(event) {
+self.addEventListener('activate', function (event) {
   event.waitUntil(
-    caches.keys().then(function(cacheNames) {
+    caches.keys().then(function (cacheNames) {
       return Promise.all(
-        cacheNames.map(function(cacheName) {
+        cacheNames.map(function (cacheName) {
           if (LATEST_VERSION !== cacheName) {
             return caches.delete(cacheName);
           }
