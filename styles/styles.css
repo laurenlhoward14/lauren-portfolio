@@ -6,6 +6,16 @@
 	--highlight: #02ee97;
 }
 
+@media (prefers-color-scheme: light) {
+	:root {
+		--primary: #fafafa;
+		--primary11: #e9e9e8;
+		--secondary: #121212;
+		--primary13: #ffffff;
+		--highlight: #ef6c00;
+	}
+}
+
 body {
 	background-color: var(--primary);
 	color: var(--secondary);
@@ -28,6 +38,10 @@ body {
     background-color: var(--primary);
     color: var(--secondary);
   }
+}
+
+ #svg-img {
+	fill: var(--primary);
 }
 
 #welcome-section--container {
@@ -68,6 +82,7 @@ a {
 	display: flex;
 	flex: 0;
 	background-color: var(--primary11);
+	box-shadow: 0 2px 2px 0 rgba(0,0,0,0.15);
 }
 
 #navbar div {
@@ -175,6 +190,7 @@ a {
 	display: flex;
 	flex-direction: column;
 	justify-content: space-around;
+	box-shadow: 0 2px 2px 0 rgba(0,0,0,0.15);
 }
 
 .project-tile div {
