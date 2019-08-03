@@ -26,10 +26,13 @@ This website is also for any one googling me. Since I've deleted my social media
 ### v2
 - Portfolio can go offline via a service worker
 - Material design guidelines for dark mode
+- Light/dark mode detection 
 
 ## Roadmap 
 
-- Light/dark mode detection 
+- Improve performance by loading non-essentials later
+- Form for taking in responses 
+- More options for email, in case no email hooked up
 
 ## Credit 
 
