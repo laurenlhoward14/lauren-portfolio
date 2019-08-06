@@ -1,99 +1,254 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Jack Howard - Full-Stack Dev</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="styles/styles.css">
+    <style type="text/css">
+        :root {
+            --primary: #121212;
+            --primary11: #1d1d1d;
+            --primary13: #202020;
+            --secondary: #e1e1e1;
+            --highlight: #02ee97;
+        }
+
+        body {
+            background-color: var(--primary);
+            color: var(--secondary);
+            overscroll-behavior: none;
+            font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+            font-size: 112.5%;
+            line-height: 1.5;
+            margin: 0;
+            padding: 0;
+        }
+
+        #svg-img {
+            fill: var(--primary);
+        }
+
+        #welcome-section--container {
+            margin-left: auto;
+            margin-right: auto;
+            max-width: 38em;
+            width: 88%;
+        }
+
+        h1 {
+            font-size: 2em;
+            font-weight: 700;
+            line-height: 1.2;
+            margin: 0 0 1em;
+            padding: 1em 0 0;
+            word-wrap: break-word;
+        }
+
+        #navbar {
+            overflow: hidden;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            align-items: center;
+            justify-content: center;
+            display: flex;
+            flex: 0;
+            background-color: var(--primary11);
+            box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.15);
+        }
+
+        #navbar div {
+            max-width: 980px;
+            flex: 1;
+        }
+
+        #navbar div ul {
+            display: flex;
+            justify-content: space-around;
+            align-self: stretch;
+            width: auto;
+            list-style: none;
+            padding: 0;
+            margin-block-start: 1em;
+            margin-block-end: 1em;
+            margin-inline-start: 0;
+            margin-inline-end: 0;
+            padding-inline-start: 0;
+        }
+
+        #navbar div ul li a {
+            color: var(--secondary);
+            text-decoration: none;
+        }
+
+        .section {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        #welcome-section {
+            vertical-align: center;
+        }
+
+        #action-button-container {
+            position: fixed;
+            bottom: 0px;
+            right: 0px;
+            left: 0px;
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content: center;
+            align-items: flex-end;
+            padding: 10px;
+        }
+
+        #action-button {
+            padding: 10px;
+            margin: 10px 20px;
+            display: flex;
+            align-items: center;
+            color: var(--primary);
+            background-color: var(--highlight);
+            text-decoration: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .img-container {
+            justify-content: center;
+            display: flex;
+        }
+
+        .img-circle {
+            border-radius: 50%;
+        }
+
+        @media only screen and (max-width: 750px) {
+            body {
+                font-size: 90%;
+            }
+
+            h1 {
+                margin: 0 0 0.5em;
+                padding: 0.5em 0 0;
+            }
+
+            #navbar div ul {
+                margin-block-start: 0.5em;
+                margin-block-end: 0.5em;
+                margin-inline-start: 0;
+                margin-inline-end: 0;
+                padding-inline-start: 0;
+            }
+
+            #projects,
+            #welcome-section {
+                padding-top: 36px;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="styles/light-mode.css" media="(prefers-color-scheme: light)">
+    <link rel="preload" href="styles/below-fold.css" as="style" onload="this.rel='stylesheet'">
+    <link rel="preload" href="styles/below-fold.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="styles/below-fold.css"></noscript>
     <meta name="description" content="Jack Howard is a full-stack software engineer in Chicago. He has more than two years experience in React and React Native, JavaScript, and web development. Jack has developed mobile and web apps for journalism organizations, banks and private equity companies, and startups in the transportation industry. He currently works at HAAS Alert.">
     <meta name="theme-color" content="#293d2c" />
     <link rel="manifest" href="manifest.json">
     <link rel="shortcut icon" href="">
-  </head>
-  <body>
+</head>
+
+<body>
     <nav id="navbar">
-      <div>
-      <ul>
-        <li>
-          <a href="#">Home</a>
-        </li>
-        <li>
-          <a href="#projects">Projects</a>
-        </li>
-        <li>
-          <a id="profile-link" href="https://github.com/JackHowa" target="_blank" rel="noreferrer">Github</a>
-        </li>
-      </ul>
+        <div>
+            <ul>
+                <li>
+                    <a href="#">Home</a>
+                </li>
+                <li>
+                    <a href="#projects">Projects</a>
+                </li>
+                <li>
+                    <a id="profile-link" href="https://github.com/JackHowa" target="_blank" rel="noreferrer">Github</a>
+                </li>
+            </ul>
     </nav>
     <main>
-      <div id="welcome-section" class="section">
-        <div id="welcome-section--container">
-          <article>
-            <div class="img-container">
-              <picture>
-                <source type="image/webp" srcset="images/bio-175.webp">
-                <source type="image/png" srcset="images/bio-175.png">
-                <img src="images/bio-175.png" height="175" width="175" class="img-circle" alt="Jack Howard smiling in front of a bar">
-              </picture>
+        <div id="welcome-section" class="section">
+            <div id="welcome-section--container">
+                <article>
+                    <div class="img-container">
+                        <picture>
+                            <source type="image/webp" srcset="images/bio-175.webp">
+                            <source type="image/png" srcset="images/bio-175.png">
+                            <img src="images/bio-175.png" height="175" width="175" class="img-circle" alt="Jack Howard smiling in front of a bar">
+                        </picture>
+                    </div>
+                    <h1>Yo — he's Jack.</h1>
+                    <p>He makes web and mobile apps and tea. Jack's made mobile apps for delayed photo-sharing, addiction support, public radio donation, and real estate investment. He is currently a software engineer at a transportation startup.</p>
+                    <p>The Chicagoland-native's favorite tea is a citrusy loose leaf called Southern Sunrise. He lives in Avondale, Chicago, with his wife.</p>
+                </article>
             </div>
-            <h1>Yo — he's Jack.</h1>
-            <p>He makes web and mobile apps and tea. Jack's made mobile apps for delayed photo-sharing, addiction support, public radio donation, and real estate investment. He is currently a software engineer at a transportation startup.</p>
-            <p>The Chicagoland-native's favorite tea is a citrusy loose leaf called Southern Sunrise. He lives in Avondale, Chicago, with his wife.</p>
-          </article>
         </div>
-      </div>
-      <div id="projects" class="section">
-        <div class="project-tile">
-          <h2>Voting App (React & Node)</h2>
-          <p>With React front-end and Node back-end, give your vue on front-end frameworks!</p>
-          <div>
-            <div>
-              <a href="https://jackhowa.github.io/repo-dashboard" target="_blank" rel="noreferrer">Demo</a>
+        <div id="projects" class="section">
+            <div class="project-tile">
+                <h2>Voting App (React & Node)</h2>
+                <p>With React front-end and Node back-end, give your vue on front-end frameworks!</p>
+                <div>
+                    <div>
+                        <a href="https://jackhowa.github.io/repo-dashboard" target="_blank" rel="noreferrer">Demo</a>
+                    </div>
+                    <div>
+                        <a href="https://github.com/JackHowa/repo-dashboard" target="_blank" rel="noreferrer">Front-End</a>
+                    </div>
+                    <div>
+                        <a href="https://github.com/JackHowa/repo-dashboard-backend" target="_blank" rel="noreferrer">Backend-End</a>
+                    </div>
+                </div>
             </div>
-            <div>
-              <a href="https://github.com/JackHowa/repo-dashboard" target="_blank" rel="noreferrer">Front-End</a>
+            <div class="project-tile">
+                <h2>Hotel Price Finder (React)</h2>
+                <p>Using React and async/await, find the price of hotels in the area. This also features a responsive table style.</p>
+                <div>
+                    <div>
+                        <a href="https://github.com/JackHowa/react-frontend-homework" target="_blank" rel="noreferrer">Repo</a>
+                    </div>
+                </div>
             </div>
-            <div>
-              <a href="https://github.com/JackHowa/repo-dashboard-backend" target="_blank" rel="noreferrer">Backend-End</a>
+            <div class="project-tile">
+                <h2>Cwello (Node)</h2>
+                <p>This was an internal projects with a consulting firm to improve our internal workflow. It was open-sourced for its integration using Node for Trello and ConnectWise, a ticket manager.</p>
+                <div>
+                    <div>
+                        <a href="https://github.com/JackHowa/Cwello" target="_blank" rel="noreferrer">Repo</a>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-        <div class="project-tile">
-          <h2>Hotel Price Finder (React)</h2>
-          <p>Using React and async/await, find the price of hotels in the area. This also features a responsive table style.</p>
-          <div>
-            <div>
-              <a href="https://github.com/JackHowa/react-frontend-homework" target="_blank" rel="noreferrer">Repo</a>
-            </div>
-          </div>
+        <div id="action-button-container">
+            <a id="action-button" href="mailto:jackhowaa@gmail.com" target="_blank" rel="noreferrer" aria-label="Send an email to Jack via mail client">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                    <path fill="none" d="M0 0h24v24H0V0z" />
+                    <path id="svg-img" d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H6l-2 2V4h16v12z" />
+                </svg>
+            </a>
         </div>
-        <div class="project-tile">
-          <h2>Cwello (Node)</h2>
-          <p>This was an internal projects with a consulting firm to improve our internal workflow. It was open-sourced for its integration using Node for Trello and ConnectWise, a ticket manager.</p>
-          <div>
-            <div>
-              <a href="https://github.com/JackHowa/Cwello" target="_blank" rel="noreferrer">Repo</a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div id="action-button-container">
-        <a id="action-button" href="mailto:jackhowaa@gmail.com" target="_blank" rel="noreferrer" aria-label="Send an email to Jack via mail client">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0V0z"/>
-              <path id="svg-img" d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H6l-2 2V4h16v12z"/>
-            </svg>
-        </a>
-      </div>
     </main>
     <script>
-      if('serviceWorker' in navigator) {
-      	navigator.serviceWorker
-                 .register('/sw.js')
-                 .catch(console.log)
-      }
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker
+                .register('/sw.js')
+                .catch(console.log)
+        }
     </script>
-  </body>
-  <!-- for testing purposes -->
-  <!-- <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script> -->
+</body>
+<!-- for testing purposes -->
+<!-- <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script> -->
+
 </html>
