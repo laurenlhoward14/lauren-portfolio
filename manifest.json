@@ -1,19 +1,20 @@
 {
-    "short_name": "Jack Howard",
-    "name": "Jack Howard – Full-Stack Developer",
-    "start_url": ".",
-    "display": "standalone",
-    "theme_color": "#293d2c",
-    "background_color": "#293d2c",
-    "icons": [{
-            "src": "./images/bio-192.png",
-            "sizes": "192x192",
-            "type": "image/png"
-        },
-        {
-            "src": "./images/bio-512.png",
-            "sizes": "512x512",
-            "type": "image/png"
-        }
-    ]
+  "short_name": "Jack Howard",
+  "name": "Jack Howard – Full-Stack Developer",
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#02ee97",
+  "background_color": "#02ee97",
+  "icons": [
+    {
+      "src": "./images/bio-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "./images/bio-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
 }
